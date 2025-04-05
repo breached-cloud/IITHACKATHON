@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221 83% 33%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 33%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 240 6% 97%;
+    --sidebar-foreground: 235 16% 26%;
+    --sidebar-primary: 221 83% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 235 16% 15%;
+    --sidebar-border: 240 5% 90%;
+    --sidebar-ring: 221 83% 33%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 221 83% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    
+    --sidebar-background: 222 40% 10%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 224 76% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 223 30% 15%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 223 30% 15%;
+    --sidebar-ring: 224 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-pravaah-bg text-pravaah-text font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-pravaah-primary to-pravaah-secondary text-white font-montserrat font-medium rounded-lg px-4 py-2 hover:shadow-md transition-all duration-300;
+  }
+
+  .card-fluid {
+    @apply bg-white dark:bg-pravaah-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
+  }
+}
+
+@layer components {
+  .dashboard-card {
+    @apply bg-white dark:bg-gray-800/90 rounded-xl shadow-sm backdrop-blur-sm border border-gray-100 dark:border-gray-700/50 p-5 transition-all hover:shadow-md;
+  }
+  
+  .dashboard-stat {
+    @apply text-2xl font-bold text-pravaah-primary;
+  }
+  
+  .dashboard-stat-label {
+    @apply text-sm text-gray-500 dark:text-gray-400;
+  }
+  
+  .course-card {
+    @apply bg-white dark:bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100 dark:border-gray-700/50 overflow-hidden transition-all hover:shadow-md hover:-translate-y-1 duration-300;
+  }
+  
+  .nav-link {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg transition-colors;
+  }
+  
+  .nav-link.active {
+    @apply bg-pravaah-primary text-white;
+  }
+  
+  .nav-link:not(.active) {
+    @apply text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-white/20 dark:border-gray-700/30;
+  }
+
+  /* Neumorphic UI Elements */
+  .neumorphic {
+    @apply bg-gray-100 dark:bg-gray-800 shadow-neumorphic dark:shadow-none rounded-xl;
+  }
+
+  /* Floating Action Button */
+  .fab {
+    @apply fixed bottom-6 right-6 bg-pravaah-accent text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50;
+  }
+  
+  /* Light mode specific enhancements */
+  .light-card {
+    @apply bg-white border border-gray-100 shadow-sm hover:shadow-md rounded-xl p-5 transition-all duration-300;
+  }
+  
+  .light-button {
+    @apply bg-pravaah-primary hover:bg-pravaah-primary/90 text-white rounded-lg px-4 py-2 transition-all duration-300;
+  }
+  
+  .light-input {
+    @apply bg-white border border-gray-200 rounded-xl px-4 py-2 focus:ring-2 focus:ring-pravaah-primary/30 focus:border-pravaah-primary outline-none transition-all duration-300;
+  }
+  
+  /* Enhanced light mode card styles */
+  .enhanced-card {
+    @apply bg-gradient-to-br from-white to-gray-50 border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  /* Soft UI elements for light mode */
+  .soft-button {
+    @apply bg-gradient-to-r from-pravaah-primary/90 to-pravaah-primary text-white rounded-xl px-4 py-2 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300;
+  }
+  
+  .soft-input {
+    @apply bg-gray-50 border border-gray-200 rounded-xl px-4 py-2 focus:ring-2 focus:ring-pravaah-primary/30 focus:border-pravaah-primary/70 shadow-inner outline-none transition-all duration-300;
+  }
+  
+  /* Pastel backgrounds for light mode sections */
+  .pastel-blue-bg {
+    @apply bg-blue-50;
+  }
+  
+  .pastel-green-bg {
+    @apply bg-green-50;
+  }
+  
+  .pastel-purple-bg {
+    @apply bg-purple-50;
+  }
+  
+  /* Glassmorphism UI Elements */
+  .glass-card {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .glass-button {
+    @apply bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm text-white border border-white/10 dark:border-gray-700/10 rounded-lg px-4 py-2 hover:bg-white/30 dark:hover:bg-gray-700/30 transition-all duration-300;
+  }
+  
+  /* Enhanced card styles */
+  .card-highlight {
+    @apply relative overflow-hidden bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 border-0 rounded-xl p-6 shadow-lg;
+  }
+  
+  .card-highlight::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pravaah-primary to-pravaah-accent;
+  }
+  
+  /* Interactive elements */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)];
+  }
+  
+  /* Animation utilities */
+  .fade-in-up {
+    @apply opacity-0 translate-y-4 animate-[fadeInUp_0.5s_ease-out_forwards];
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .stagger-children > * {
+    @apply opacity-0;
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}
